@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Mubashir Ahmed Azad - Full Stack Developer Portfolio. Specializing in React, Node.js, Python, and modern web technologies.">
+    <meta name="keywords" content="Mubashir Ahmed Azad, Full Stack Developer, Web Developer, React, Node.js, Portfolio">
+    <meta name="author" content="Mubashir Ahmed Azad">
+    <title>Mubashir Ahmed Azad | Portfolio</title>
+
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+
+    <!-- AOS Animate on Scroll -->
+    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Custom cursor glow -->
+    <div class="cursor-glow" id="cursorGlow"></div>
+
+    <!-- Background gradient orbs -->
+    <div class="bg-orb bg-orb--1"></div>
+    <div class="bg-orb bg-orb--2"></div>
+    <div class="bg-orb bg-orb--3"></div>
+
+    <!-- ========== NAVBAR ========== -->
+    <nav class="navbar" id="navbar">
+        <div class="navbar__container">
+            <a href="#home" class="navbar__logo">
+                <span class="navbar__logo-text">MA</span>
+            </a>
+            <ul class="navbar__menu" id="navMenu">
+                <li><a href="#home" class="navbar__link active" data-section="home">Home</a></li>
+                <li><a href="#about" class="navbar__link" data-section="about">About</a></li>
+                <li><a href="#skills" class="navbar__link" data-section="skills">Skills</a></li>
+                <li><a href="#projects" class="navbar__link" data-section="projects">Projects</a></li>
+                <li><a href="#experience" class="navbar__link" data-section="experience">Experience</a></li>
+                <li><a href="#education" class="navbar__link" data-section="education">Education</a></li>
+                <li><a href="#contact" class="navbar__link" data-section="contact">Contact</a></li>
+            </ul>
+            <div class="navbar__actions">
+                <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+                    <i data-lucide="moon" class="theme-toggle__icon theme-toggle__icon--dark"></i>
+                    <i data-lucide="sun" class="theme-toggle__icon theme-toggle__icon--light"></i>
+                </button>
+                <button class="navbar__hamburger" id="hamburger" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <!-- ========== HERO SECTION ========== -->
+        <section class="hero" id="home">
+            <div class="hero__container">
+                <div class="hero__content" data-aos="fade-up" data-aos-duration="1000">
+                    <div class="hero__badge">
+                        <i data-lucide="sparkles"></i>
+                        <span>Ready to Innovate</span>
+                    </div>
+                    <h1 class="hero__title">
+                        Full Stack<br>
+                        <span class="hero__title--gradient">Developer</span>
+                    </h1>
+                    <div class="hero__subtitle">
+                        <span class="typewriter" id="typewriter"></span>
+                        <span class="typewriter__cursor">|</span>
+                    </div>
+                    <p class="hero__description">
+                        Final-year Computer Science Engineering student passionate about building 
+                        scalable web applications. Eager to solve complex problems and contribute 
+                        to collaborative development teams.
+                    </p>
+                    <div class="hero__tags">
+                        <span class="hero__tag">React</span>
+                        <span class="hero__tag">Node.js</span>
+                        <span class="hero__tag">Python</span>
+                        <span class="hero__tag">MongoDB</span>
+                    </div>
+                    <div class="hero__cta">
+                        <a href="#projects" class="btn btn--primary">
+                            <span>Projects</span>
+                            <i data-lucide="external-link"></i>
+                        </a>
+                        <a href="#contact" class="btn btn--outline">
+                            <span>Contact</span>
+                            <i data-lucide="mail"></i>
+                        </a>
+                    </div>
+                    <div class="hero__socials">
+                        <a href="https://github.com/MubashirAhmedAzad" target="_blank" rel="noopener" class="hero__social-link" aria-label="GitHub">
+                            <i data-lucide="github"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/mubashir-ahmed-azad" target="_blank" rel="noopener" class="hero__social-link" aria-label="LinkedIn">
+                            <i data-lucide="linkedin"></i>
+                        </a>
+                        <a href="mailto:mubashir.a.azad@gmail.com" class="hero__social-link" aria-label="Email">
+                            <i data-lucide="mail"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="hero__visual" data-aos="fade-left" data-aos-duration="1200" data-aos-delay="300">
+                    <div class="hero__glow-card">
+                        <div class="hero__code-block">
+                            <div class="code-header">
+                                <span class="code-dot code-dot--red"></span>
+                                <span class="code-dot code-dot--yellow"></span>
+                                <span class="code-dot code-dot--green"></span>
+                                <span class="code-filename">developer.js</span>
+                            </div>
+                            <pre class="code-content"><code><span class="code-keyword">const</span> <span class="code-var">developer</span> = {
+  <span class="code-key">name</span>: <span class="code-string">"Mubashir Ahmed Azad"</span>,
+  <span class="code-key">role</span>: <span class="code-string">"Full Stack Developer"</span>,
+  <span class="code-key">skills</span>: [
+    <span class="code-string">"React"</span>, <span class="code-string">"Node.js"</span>,
+    <span class="code-string">"Python"</span>, <span class="code-string">"MongoDB"</span>
+  ],
+  <span class="code-key">passion</span>: <span class="code-string">"Building solutions"</span>,
+  <span class="code-key">available</span>: <span class="code-bool">true</span>
+};</code></pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========== ABOUT SECTION ========== -->
+        <section class="section about" id="about">
+            <div class="section__container">
+                <h2 class="section__title" data-aos="fade-up">
+                    <span class="section__title--gradient">About Me</span>
+                </h2>
+                <p class="section__subtitle" data-aos="fade-up" data-aos-delay="100">
+                    Get to know the person behind the code
+                </p>
+
+                <div class="about__content" data-aos="fade-up" data-aos-delay="200">
+                    <div class="about__text">
+                        <p>
+                            Hello, I'm <strong>Mubashir Ahmed Azad</strong>, a final-year Computer Science Engineering 
+                            student at <strong>Dayananda Sagar University, Bangalore</strong>. I'm passionate about building 
+                            smart and scalable web & mobile applications.
+                        </p>
+                        <p>
+                            I've developed expertise in full-stack technologies including HTML, CSS, React.js, 
+                            Node.js, Python, and MongoDB. I constantly explore new technologies to refine my skills 
+                            and stay current in the rapidly evolving tech landscape.
+                        </p>
+                        <p>
+                            Focused on continuous learning, I aim to transition into the IT industry and eventually 
+                            move towards AI and data science. When I'm not coding, I enjoy problem-solving challenges 
+                            and collaborating with development teams.
+                        </p>
+                        <div class="about__cta">
+                            <a href="Mubashir_Ahmed_Azad_Resume_Print.pdf" download class="btn btn--primary">
+                                <i data-lucide="file-text"></i>
+                                <span>Download CV</span>
+                            </a>
+                            <a href="#projects" class="btn btn--outline">
+                                <i data-lucide="code-2"></i>
+                                <span>View Projects</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Stats Cards -->
+                <div class="stats" data-aos="fade-up" data-aos-delay="300">
+                    <div class="stat-card">
+                        <div class="stat-card__icon">
+                            <i data-lucide="code-2"></i>
+                        </div>
+                        <div class="stat-card__number" data-count="4">0</div>
+                        <div class="stat-card__label">TOTAL PROJECTS</div>
+                        <div class="stat-card__desc">Innovative web solutions crafted</div>
+                        <i data-lucide="arrow-up-right" class="stat-card__arrow"></i>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-card__icon">
+                            <i data-lucide="award"></i>
+                        </div>
+                        <div class="stat-card__number" data-count="10">0</div>
+                        <div class="stat-card__label">TECHNOLOGIES</div>
+                        <div class="stat-card__desc">Tools & frameworks mastered</div>
+                        <i data-lucide="arrow-up-right" class="stat-card__arrow"></i>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-card__icon">
+                            <i data-lucide="globe"></i>
+                        </div>
+                        <div class="stat-card__number" data-count="3">0</div>
+                        <div class="stat-card__label">YEARS OF STUDY</div>
+                        <div class="stat-card__desc">Continuous learning journey</div>
+                        <i data-lucide="arrow-up-right" class="stat-card__arrow"></i>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========== SKILLS SECTION ========== -->
+        <section class="section skills" id="skills">
+            <div class="section__container">
+                <h2 class="section__title" data-aos="fade-up">
+                    <span class="section__title--gradient">Technical Skills</span>
+                </h2>
+                <p class="section__subtitle" data-aos="fade-up" data-aos-delay="100">
+                    A collection of tools and technologies I use to build digital solutions
+                </p>
+
+                <div class="skills__grid" data-aos="fade-up" data-aos-delay="200">
+                    <!-- Category: Frontend -->
+                    <div class="skill-category">
+                        <h3 class="skill-category__title">
+                            <i data-lucide="layout"></i>
+                            <span>Core Development</span>
+                        </h3>
+                        <div class="skill-category__items">
+                            <div class="skill-item">
+                                <div class="skill-item__icon">
+                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML5" width="32" height="32">
+                                </div>
+                                <span class="skill-item__name">HTML5</span>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-item__icon">
+                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS3" width="32" height="32">
+                                </div>
+                                <span class="skill-item__name">CSS3</span>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-item__icon">
+                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript" width="32" height="32">
+                                </div>
+                                <span class="skill-item__name">JavaScript</span>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-item__icon">
+                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React.js" width="32" height="32">
+                                </div>
+                                <span class="skill-item__name">React.js</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Category: Backend -->
+                    <div class="skill-category">
+                        <h3 class="skill-category__title">
+                            <i data-lucide="server"></i>
+                            <span>Frameworks & Libraries</span>
+                        </h3>
+                        <div class="skill-category__items">
+                            <div class="skill-item">
+                                <div class="skill-item__icon">
+                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="Node.js" width="32" height="32">
+                                </div>
+                                <span class="skill-item__name">Node.js</span>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-item__icon">
+                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flask/flask-original.svg" alt="Flask" width="32" height="32">
+                                </div>
+                                <span class="skill-item__name">Flask</span>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-item__icon">
+                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python" width="32" height="32">
+                                </div>
+                                <span class="skill-item__name">Python</span>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-item__icon">
+                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="Java" width="32" height="32">
+                                </div>
+                                <span class="skill-item__name">Java</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Category: Database & Tools -->
+                    <div class="skill-category">
+                        <h3 class="skill-category__title">
+                            <i data-lucide="database"></i>
+                            <span>Databases & Tools</span>
+                        </h3>
+                        <div class="skill-category__items">
+                            <div class="skill-item">
+                                <div class="skill-item__icon">
+                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" alt="MongoDB" width="32" height="32">
+                                </div>
+                                <span class="skill-item__name">MongoDB</span>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-item__icon">
+                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="MySQL" width="32" height="32">
+                                </div>
+                                <span class="skill-item__name">MySQL</span>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-item__icon">
+                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git" width="32" height="32">
+                                </div>
+                                <span class="skill-item__name">Git</span>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-item__icon">
+                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub" width="32" height="32">
+                                </div>
+                                <span class="skill-item__name">GitHub</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========== PROJECTS SECTION ========== -->
+        <section class="section projects" id="projects">
+            <div class="section__container">
+                <h2 class="section__title" data-aos="fade-up">
+                    <span class="section__title--gradient">Portfolio Showcase</span>
+                </h2>
+                <p class="section__subtitle" data-aos="fade-up" data-aos-delay="100">
+                    Featured projects that demonstrate my technical capabilities
+                </p>
+
+                <div class="projects__grid" data-aos="fade-up" data-aos-delay="200">
+                    <!-- Project 1 -->
+                    <div class="project-card">
+                        <div class="project-card__header">
+                            <div class="project-card__icon">
+                                <i data-lucide="plane"></i>
+                            </div>
+                            <div class="project-card__links">
+                                <a href="https://github.com/MubashirAhmedAzad" target="_blank" rel="noopener" aria-label="GitHub repo">
+                                    <i data-lucide="github"></i>
+                                </a>
+                                <a href="#" target="_blank" rel="noopener" aria-label="Live demo">
+                                    <i data-lucide="external-link"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <h3 class="project-card__title">Node-Orchestrated AI Travel Workflow</h3>
+                        <p class="project-card__description">
+                            Built an AI-driven multi-agent travel system for flight search, hotel booking, 
+                            and itinerary planning with human-in-the-loop oversight. Sends custom email updates 
+                            and maintains stateful interactions for a seamless, end-to-end travel solution.
+                        </p>
+                        <div class="project-card__tags">
+                            <span class="project-card__tag">LLMs</span>
+                            <span class="project-card__tag">n8n</span>
+                            <span class="project-card__tag">Node.js</span>
+                            <span class="project-card__tag">AI Agents</span>
+                        </div>
+                    </div>
+
+                    <!-- Project 2 -->
+                    <div class="project-card">
+                        <div class="project-card__header">
+                            <div class="project-card__icon">
+                                <i data-lucide="bar-chart-3"></i>
+                            </div>
+                            <div class="project-card__links">
+                                <a href="https://github.com/MubashirAhmedAzad" target="_blank" rel="noopener" aria-label="GitHub repo">
+                                    <i data-lucide="github"></i>
+                                </a>
+                                <a href="#" target="_blank" rel="noopener" aria-label="Live demo">
+                                    <i data-lucide="external-link"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <h3 class="project-card__title">Bangalore Real Estate Price Predictor</h3>
+                        <p class="project-card__description">
+                            Developed a Machine Learning web app to predict property prices in Bangalore. 
+                            Implemented feature engineering, model training, and a responsive UI using 
+                            Python, Flask, and HTML/CSS/JavaScript.
+                        </p>
+                        <div class="project-card__tags">
+                            <span class="project-card__tag">Python</span>
+                            <span class="project-card__tag">Flask</span>
+                            <span class="project-card__tag">ML</span>
+                            <span class="project-card__tag">HTML/CSS</span>
+                        </div>
+                    </div>
+
+                    <!-- Project 3 -->
+                    <div class="project-card">
+                        <div class="project-card__header">
+                            <div class="project-card__icon">
+                                <i data-lucide="wallet"></i>
+                            </div>
+                            <div class="project-card__links">
+                                <a href="https://github.com/MubashirAhmedAzad" target="_blank" rel="noopener" aria-label="GitHub repo">
+                                    <i data-lucide="github"></i>
+                                </a>
+                                <a href="#" target="_blank" rel="noopener" aria-label="Live demo">
+                                    <i data-lucide="external-link"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <h3 class="project-card__title">Finance Tracker Web Application</h3>
+                        <p class="project-card__description">
+                            Built a full-stack tool for income/expense tracking with secure authentication 
+                            and analytics dashboard. Features real-time budget visualization and comprehensive 
+                            financial reporting.
+                        </p>
+                        <div class="project-card__tags">
+                            <span class="project-card__tag">React.js</span>
+                            <span class="project-card__tag">Node.js</span>
+                            <span class="project-card__tag">MongoDB</span>
+                            <span class="project-card__tag">REST API</span>
+                        </div>
+                    </div>
+
+                    <!-- Project 4 -->
+                    <div class="project-card">
+                        <div class="project-card__header">
+                            <div class="project-card__icon">
+                                <i data-lucide="shield-check"></i>
+                            </div>
+                            <div class="project-card__links">
+                                <a href="https://github.com/MubashirAhmedAzad" target="_blank" rel="noopener" aria-label="GitHub repo">
+                                    <i data-lucide="github"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <h3 class="project-card__title">Portfolio Website with Admin Panel</h3>
+                        <p class="project-card__description">
+                            A responsive single-page portfolio with contact form submissions stored in 
+                            localStorage, admin login system, dark/light mode toggle, and dynamic 
+                            responses viewer — all built with vanilla HTML, CSS, and JavaScript.
+                        </p>
+                        <div class="project-card__tags">
+                            <span class="project-card__tag">HTML5</span>
+                            <span class="project-card__tag">CSS3</span>
+                            <span class="project-card__tag">JavaScript</span>
+                            <span class="project-card__tag">localStorage</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========== EXPERIENCE SECTION ========== -->
+        <section class="section experience" id="experience">
+            <div class="section__container">
+                <h2 class="section__title" data-aos="fade-up">
+                    <span class="section__title--gradient">Experience</span>
+                </h2>
+                <p class="section__subtitle" data-aos="fade-up" data-aos-delay="100">
+                    My professional journey and growth
+                </p>
+
+                <div class="timeline" data-aos="fade-up" data-aos-delay="200">
+                    <div class="timeline__item">
+                        <div class="timeline__dot"></div>
+                        <div class="timeline__content">
+                            <div class="timeline__date">
+                                <i data-lucide="calendar"></i>
+                                <span>Feb 2023 – Jun 2023</span>
+                            </div>
+                            <h3 class="timeline__title">Cyber Security Intern</h3>
+                            <p class="timeline__company">Vivarttana Technologies Pvt. Ltd., Bengaluru</p>
+                            <ul class="timeline__details">
+                                <li>Completed a 16-week internship focused on SQL injection detection</li>
+                                <li>Assisted in developing security measures and web testing practices</li>
+                                <li>Gained hands-on experience in cybersecurity and project implementation</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========== EDUCATION SECTION ========== -->
+        <section class="section education" id="education">
+            <div class="section__container">
+                <h2 class="section__title" data-aos="fade-up">
+                    <span class="section__title--gradient">Education</span>
+                </h2>
+                <p class="section__subtitle" data-aos="fade-up" data-aos-delay="100">
+                    My academic background and qualifications
+                </p>
+
+                <div class="education__grid" data-aos="fade-up" data-aos-delay="200">
+                    <div class="edu-card">
+                        <div class="edu-card__icon">
+                            <i data-lucide="graduation-cap"></i>
+                        </div>
+                        <div class="edu-card__content">
+                            <h3 class="edu-card__degree">B.Tech in Computer Science & Engineering</h3>
+                            <p class="edu-card__school">Dayananda Sagar University, Bangalore</p>
+                            <span class="edu-card__year">2023 – 2026</span>
+                        </div>
+                    </div>
+
+                    <div class="edu-card">
+                        <div class="edu-card__icon">
+                            <i data-lucide="book-open"></i>
+                        </div>
+                        <div class="edu-card__content">
+                            <h3 class="edu-card__degree">Diploma in Computer Science Engineering</h3>
+                            <p class="edu-card__school">Dayananda Sagar Institution, Bangalore</p>
+                            <span class="edu-card__year">2020 – 2023</span>
+                        </div>
+                    </div>
+
+                    <div class="edu-card">
+                        <div class="edu-card__icon">
+                            <i data-lucide="school"></i>
+                        </div>
+                        <div class="edu-card__content">
+                            <h3 class="edu-card__degree">High School (Class X)</h3>
+                            <p class="edu-card__school">Little Angels School, Meghalaya</p>
+                            <span class="edu-card__year">Completed 2020</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========== CONTACT SECTION ========== -->
+        <section class="section contact" id="contact">
+            <div class="section__container">
+                <h2 class="section__title" data-aos="fade-up">
+                    <span class="section__title--gradient">Contact Me</span>
+                </h2>
+                <p class="section__subtitle" data-aos="fade-up" data-aos-delay="100">
+                    Got a question? Send me a message, and I'll get back to you soon.
+                </p>
+
+                <div class="contact__wrapper" data-aos="fade-up" data-aos-delay="200">
+                    <div class="contact__card">
+                        <div class="contact__card-header">
+                            <h3 class="contact__card-title">Get in Touch</h3>
+                            <i data-lucide="share-2" class="contact__card-icon"></i>
+                        </div>
+                        <p class="contact__card-desc">Have something to discuss? Send me a message and let's talk.</p>
+
+                        <form class="contact__form" id="contactForm">
+                            <div class="form-group">
+                                <div class="form-group__icon">
+                                    <i data-lucide="user"></i>
+                                </div>
+                                <input type="text" id="contactName" class="form-input" placeholder="Your Name" required>
+                            </div>
+                            <div class="form-group">
+                                <div class="form-group__icon">
+                                    <i data-lucide="mail"></i>
+                                </div>
+                                <input type="email" id="contactEmail" class="form-input" placeholder="Your Email" required>
+                                <span class="form-error" id="emailError">Please enter a valid email address</span>
+                            </div>
+                            <div class="form-group">
+                                <div class="form-group__icon form-group__icon--textarea">
+                                    <i data-lucide="message-square"></i>
+                                </div>
+                                <textarea id="contactMessage" class="form-input form-textarea" placeholder="Your Message" rows="5" required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn--primary btn--full" id="submitBtn">
+                                <i data-lucide="send"></i>
+                                <span>Send Message</span>
+                            </button>
+                        </form>
+                        <div class="contact__success" id="contactSuccess">
+                            <i data-lucide="check-circle"></i>
+                            <p>Message sent successfully! I'll get back to you soon.</p>
+                        </div>
+                    </div>
+
+                    <!-- Contact Info Sidebar -->
+                    <div class="contact__info">
+                        <div class="contact__info-card">
+                            <i data-lucide="map-pin"></i>
+                            <div>
+                                <h4>Location</h4>
+                                <p>Bengaluru, India</p>
+                            </div>
+                        </div>
+                        <div class="contact__info-card">
+                            <i data-lucide="mail"></i>
+                            <div>
+                                <h4>Email</h4>
+                                <p>mubashir.a.azad@gmail.com</p>
+                            </div>
+                        </div>
+                        <div class="contact__info-card">
+                            <i data-lucide="phone"></i>
+                            <div>
+                                <h4>Phone</h4>
+                                <p>+91 7005631241</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========== ADMIN SECTION ========== -->
+        <section class="section admin" id="admin">
+            <div class="section__container">
+                <!-- Admin Login -->
+                <div class="admin__login" id="adminLogin">
+                    <div class="admin__login-card" data-aos="fade-up">
+                        <div class="admin__login-header">
+                            <i data-lucide="lock"></i>
+                            <h3>Admin Access</h3>
+                        </div>
+                        <form class="admin__login-form" id="adminForm">
+                            <div class="form-group">
+                                <input type="text" id="adminUser" class="form-input" placeholder="Username" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="password" id="adminPass" class="form-input" placeholder="Password" required>
+                            </div>
+                            <span class="form-error" id="adminError" style="display:none">Invalid credentials</span>
+                            <button type="submit" class="btn btn--primary btn--full">
+                                <i data-lucide="log-in"></i>
+                                <span>Login</span>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- Admin Dashboard (hidden by default) -->
+                <div class="admin__dashboard hidden" id="adminDashboard">
+                    <div class="admin__dashboard-header">
+                        <h2 class="section__title">
+                            <span class="section__title--gradient">Admin Dashboard</span>
+                        </h2>
+                        <button class="btn btn--outline btn--sm" id="adminLogout">
+                            <i data-lucide="log-out"></i>
+                            <span>Logout</span>
+                        </button>
+                    </div>
+                    <p class="admin__count" id="responseCount">Total Responses: 0</p>
+                    <div class="admin__responses" id="responsesContainer">
+                        <!-- Responses will be dynamically rendered here -->
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ========== FOOTER ========== -->
+    <footer class="footer">
+        <div class="footer__container">
+            <div class="footer__top">
+                <div class="footer__brand">
+                    <span class="navbar__logo-text">MA</span>
+                    <p>Building digital experiences with passion and precision.</p>
+                </div>
+                <div class="footer__links">
+                    <a href="#home">Home</a>
+                    <a href="#about">About</a>
+                    <a href="#projects">Projects</a>
+                    <a href="#contact">Contact</a>
+                </div>
+                <div class="footer__socials">
+                    <a href="https://github.com/MubashirAhmedAzad" target="_blank" rel="noopener" aria-label="GitHub"><i data-lucide="github"></i></a>
+                    <a href="https://www.linkedin.com/in/mubashir-ahmed-azad" target="_blank" rel="noopener" aria-label="LinkedIn"><i data-lucide="linkedin"></i></a>
+                    <a href="mailto:mubashir.a.azad@gmail.com" aria-label="Email"><i data-lucide="mail"></i></a>
+                </div>
+            </div>
+            <div class="footer__bottom">
+                <p>&copy; 2026 Mubashir Ahmed Azad. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- AOS JS -->
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>

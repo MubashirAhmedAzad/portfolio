@@ -1,0 +1,34 @@
+=== PAGE 1 ===
+M UBASHIR AHM ED AZAD
+https://www.linkedin.com/in/mubashir-ahmed-azad
+PROFESSIONAL SUM M ARY
+Final-year Computer Science Engineering student with an interest in full-stack development.
+Familiar with HTML, CSS, React.js, and MongoDb, and eager to apply and grow these skills in
+real-world projects. Enthusiastic about learning, problem-solving, and contributing to collaborative
+development teams.+91 7005631241 mubashir.a.azad@gmail.com Bengaluru
+EDUCATION
+B.Tech in Computer Science & Engineering, Dayananda Sagar University, Bangalore | 2023 – 2026
+Diploma in Computer Science Engineering, Dayananda Sagar Institution, Bangalore | 2020 – 2023
+High School (Class X), Little Angels School, Meghalaya | Completed 2020
+PROFESSIONAL EXPERIENCE
+ACADEM IC PROJECTSCyber Security Intern | Vivarttana Technologies Pvt. Ltd., Bengaluru, India | Feb 2023 – Jun 2023
+Completed a 16-week internship on SQL injection detection.
+Assisted in developing security measures and web testing practices.
+Gained hands-on experience in cybersecurity and project implementation.
+Node-Orchestrated AI Travel Workflow System –  LLMs, n8n
+Built an AI-driven multi-agent travel system for flight search, hotel booking, and itinerary
+planning with human-in-the-loop oversight.
+Sends custom email updates and maintains stateful interactions for a seamless, end-to-end
+travel solution.
+Bangalore Real Estate Price Prediction WebApp – Python, Flask, HTML/CSS/JS
+Developed ML web app to predict property prices; implemented feature engineering and
+responsive UI.
+Finance Tracker Web Application – React.js, Node.js/Python, MySQL/MongoDB
+Built full-stack tool for income/expense tracking with secure auth and analytics.
+KEY COM PETENCIES
+Basic understanding of front-end and back-end development.
+Proficient in HTML, CSS, React.js, Python, and Java.
+Experienced with databases (MySQL, MongoDB) and version control (Git, GitHub).
+Able to design responsive and user-friendly web interfaces.
+Strong problem-solving, teamwork, and time management skills.
+
