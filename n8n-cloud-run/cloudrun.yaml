@@ -1,0 +1,102 @@
+apiVersion: serving.knative.dev/v1
+kind: Service
+metadata:
+  # Change this name to match your Cloud Run service name
+  name: n8n
+  annotations:
+    # Allow unauthenticated requests (n8n's own basic-auth handles access)
+    run.googleapis.com/ingress: all
+spec:
+  template:
+    metadata:
+      annotations:
+        # n8n's execution engine does not support running across multiple
+        # concurrent instances without an external queue (e.g. Redis).
+        # Keep maxScale at 1 unless you enable queue mode.
+        autoscaling.knative.dev/maxScale: "1"
+        autoscaling.knative.dev/minScale: "0"
+        # Increase memory / CPU for workflow processing
+        run.googleapis.com/cpu-throttling: "false"
+    spec:
+      # Allow up to 5 minutes for long-running workflows
+      timeoutSeconds: 300
+      containers:
+        - image: gcr.io/YOUR_PROJECT_ID/n8n:latest
+          ports:
+            - containerPort: 5678
+          resources:
+            limits:
+              # 1 Gi is the minimum recommended for production workflows
+              cpu: "1"
+              memory: 1Gi
+          env:
+            # ── Database (Supabase) ───────────────────────────────────────────
+            - name: DB_TYPE
+              value: "postgresdb"
+            - name: DB_POSTGRESDB_HOST
+              valueFrom:
+                secretKeyRef:
+                  name: n8n-db-host
+                  key: latest
+            - name: DB_POSTGRESDB_PORT
+              value: "5432"
+            - name: DB_POSTGRESDB_DATABASE
+              value: "postgres"
+            - name: DB_POSTGRESDB_USER
+              value: "postgres"
+            - name: DB_POSTGRESDB_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: n8n-db-password
+                  key: latest
+            - name: DB_POSTGRESDB_SSL_ENABLED
+              value: "true"
+            - name: DB_POSTGRESDB_SSL_REJECT_UNAUTHORIZED
+              value: "true"
+            # ── n8n networking ────────────────────────────────────────────────
+            - name: N8N_HOST
+              valueFrom:
+                secretKeyRef:
+                  name: n8n-host
+                  key: latest
+            - name: N8N_PORT
+              value: "5678"
+            - name: N8N_PROTOCOL
+              value: "https"
+            - name: WEBHOOK_URL
+              valueFrom:
+                secretKeyRef:
+                  name: n8n-host
+                  key: latest
+            # ── Authentication ────────────────────────────────────────────────
+            - name: N8N_BASIC_AUTH_ACTIVE
+              value: "true"
+            - name: N8N_BASIC_AUTH_USER
+              valueFrom:
+                secretKeyRef:
+                  name: n8n-basic-auth-user
+                  key: latest
+            - name: N8N_BASIC_AUTH_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: n8n-basic-auth-password
+                  key: latest
+            # ── Encryption ────────────────────────────────────────────────────
+            - name: N8N_ENCRYPTION_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: n8n-encryption-key
+                  key: latest
+            # ── Execution / misc ──────────────────────────────────────────────
+            - name: EXECUTIONS_PROCESS
+              value: "main"
+            - name: EXECUTIONS_DATA_SAVE_ON_ERROR
+              value: "all"
+            - name: EXECUTIONS_DATA_SAVE_ON_SUCCESS
+              value: "none"
+            - name: EXECUTIONS_DATA_MAX_AGE
+              value: "168"
+            - name: GENERIC_TIMEZONE
+              value: "UTC"
+            - name: N8N_LOG_LEVEL
+              value: "info"

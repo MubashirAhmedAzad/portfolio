@@ -1,0 +1,44 @@
+steps:
+  # ── Step 1: Build the Docker image ─────────────────────────────────────────
+  - name: "gcr.io/cloud-builders/docker"
+    args:
+      - build
+      - -t
+      - "gcr.io/$PROJECT_ID/n8n:$COMMIT_SHA"
+      - -t
+      - "gcr.io/$PROJECT_ID/n8n:latest"
+      - .
+    dir: "n8n-cloud-run"
+
+  # ── Step 2: Push the image to Container Registry ───────────────────────────
+  - name: "gcr.io/cloud-builders/docker"
+    args:
+      - push
+      - "--all-tags"
+      - "gcr.io/$PROJECT_ID/n8n"
+
+  # ── Step 3: Deploy to Cloud Run ────────────────────────────────────────────
+  - name: "gcr.io/google.com/cloudsdktool/cloud-sdk"
+    entrypoint: gcloud
+    args:
+      - run
+      - services
+      - replace
+      - n8n-cloud-run/cloudrun.yaml
+      - --region=$_REGION
+      - --project=$PROJECT_ID
+
+# ── Substitution variables (override via trigger or --substitutions flag) ────
+substitutions:
+  _REGION: us-central1
+
+# ── Images to push ────────────────────────────────────────────────────────────
+images:
+  - "gcr.io/$PROJECT_ID/n8n:$COMMIT_SHA"
+  - "gcr.io/$PROJECT_ID/n8n:latest"
+
+# ── Timeout for the full build ────────────────────────────────────────────────
+timeout: "1200s"
+
+options:
+  logging: CLOUD_LOGGING_ONLY
